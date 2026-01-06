@@ -1,0 +1,7 @@
+{
+  "name": "Copy of SocaPAUD - Asisten Konstruksi Model OKKE",
+  "description": "Asisten pedagogis cerdas yang menerapkan Model OKKE (Orkestrasi Kurikulum & Kearifan Etnopedagogi) untuk mengintegrasikan Studi Sosial ke dalam pembelajaran PAUD.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
