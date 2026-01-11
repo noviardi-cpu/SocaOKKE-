@@ -1,17 +1,14 @@
-
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
-  // Load env dari file .env (lokal) atau environment variable (Netlify)
-  // Fix: Cast process to any to access cwd() method when Node types are not properly detected by the IDE/Compiler in vite.config.ts
+  // Load environment variables
   const env = loadEnv(mode, (process as any).cwd(), '');
   
   return {
     plugins: [react()],
     define: {
-      // Injeksi API_KEY ke dalam kode aplikasi saat build
-      // Fix: Cast process to any to safely access env property during build time replacement
+      // Injeksi API_KEY agar bisa diakses via process.env.API_KEY di aplikasi
       'process.env.API_KEY': JSON.stringify(env.API_KEY || (process as any).env.API_KEY)
     },
     build: {
